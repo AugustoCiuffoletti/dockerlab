@@ -3,10 +3,11 @@ FROM ubuntu
 RUN echo "y" | unminimize
 RUN apt install -y apt-utils
 RUN apt install -y tcpdump
-RUN apt install -y python3
+RUN apt install -y python3 less nano
 RUN apt install -y netcat iproute2 net-tools
 RUN apt install -y iputils-ping traceroute openssh-server
 VOLUME /shared
+WORKDIR /root
 EXPOSE 22
 EXPOSE 2345/tcp
 EXPOSE 2345/udp

@@ -1,3 +1,7 @@
 server:
-	sudo docker run -a stdin -a stdout -i -t --volume ${PWD}exit/userHome/:/home/user/ mastrogeppetto/psrlab:latest  /bin/bash
+	sudo docker run --rm -a stdin -a stdout -i -t --volume ${PWD}/shared/:/shared psrlab:latest
+build:
+	sudo docker build -t psrlab:latest .
+push:
+	sudo docker tag psrlab:latest mastrogeppetto/psrlab:latest
 

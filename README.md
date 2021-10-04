@@ -1,12 +1,25 @@
 # dockerlab
 
-A momento è possibile creare un nodo server: all'interno trovate alcuni dei comandi necessari per svolgere gli esercizi. In particolare ping, ifconfig, traceroute ed nc.
+Per realizzare gli esercizi è necessario installare sulla propria macchina il codice seguente:
 
-Il server lo aprite con il comando "make server" se avete installato il tool "make". Installarlo non è difficile, ma se preferite farne a meno aprite il file "Makefile" copiate il lungo comando "docker run" e mettetelo in riga di comando.
+- docker (brew cask install docker)
+- git (brew install git)
+- make (brew install make)
+- Wireshark (brew install wireshark)
+- Ostinato
+- geany
 
-Il comando attualmente è: 
+A momento è possibile creare il nodo server: all'interno trovate alcuni dei comandi necessari per svolgere gli esercizi. In particolare ping, ifconfig, traceroute ed nc.
 
-sudo docker run -a stdin -a stdout -i -t mastrogeppetto/psrlab:latest --volume $(pwd)/userHome/:/home/user/ /bin/bash
+Per creare il nodo server, operazione che si fa una singola volta, a meno che non vi dica che è stato aggiornato, il comando da digitare è
+
+$ make build
+
+se avete installato il tool "make". Installarlo non è difficile, ma se preferite farne a meno aprite il file "Makefile" copiate il lungo comando "docker run" e mettetelo in riga di comando.
+
+Per avviare il server il comando è: 
+
+$ make server  
 
 Il prompt della linea di comando cambia e siete nel server: provate a controllare con ifconfig, dovreste avere una interfaccia eth0: annotate l'ip.
 
@@ -26,7 +39,4 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
         TX packets 0  bytes 0 (0.0 B)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-La vostra directory home è vuota, ed è collegata alla directory "userHome" nel vostro PC. I file che create in quella directory sono immediatamente visibli nel Docker, virtuale.
-
-Al momento dovete installare il software grafico. Al momento è necessario solo Wireshark, ma oggi vi parlerò anche di PackETH, che credo sia disponibile solo per Linux. Potete provare "ostinato" (https://ostinato.org/) 
-
+La vostra directory home è vuota. Una directory /shared è collegata alla directory "shared" nel vostro PC. I file che create in quella directory sono immediatamente visibli nel Docker, virtuale e viceversa.

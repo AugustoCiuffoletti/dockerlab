@@ -15,13 +15,13 @@ Per creare il nodo server, operazione che si fa una singola volta, a meno che no
 
 `$ make build`
 
-se avete installato il tool "make". Installarlo non è difficile, ma se preferite farne a meno aprite il file "Makefile" copiate il lungo comando "docker..." in corrispondenza a "build:" e mettetelo in riga di comando.
+se avete installato il tool "make". Installarlo non è difficile, ma se preferite farne a meno aprite il file "Makefile" copiate il comando "docker..." in corrispondenza a "build:" e mettetelo in riga di comando.
 
 Per avviare il server il comando è: 
 
 `$ make server`
 
-Come sopra, potete copiare il lungo comando "docker..." dal makefile in corrispondenza a "run:".
+Come sopra, potete copiare il comando "docker..." dal makefile in corrispondenza a "run:".
 
 Il prompt della linea di comando cambia e siete nel server: provate a controllare con ifconfig, dovreste avere una interfaccia eth0: annotate l'ip.
 

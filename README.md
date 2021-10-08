@@ -15,11 +15,13 @@ Per creare il nodo server, operazione che si fa una singola volta, a meno che no
 
 `$ make build`
 
-se avete installato il tool "make". Installarlo non è difficile, ma se preferite farne a meno aprite il file "Makefile" copiate il lungo comando "docker run" e mettetelo in riga di comando.
+se avete installato il tool "make". Installarlo non è difficile, ma se preferite farne a meno aprite il file "Makefile" copiate il lungo comando "docker..." in corrispondenza a "build:" e mettetelo in riga di comando.
 
 Per avviare il server il comando è: 
 
-`$ make server`  
+`$ make server`
+
+Come sopra, potete copiare il lungo comando "docker..." dal makefile in corrispondenza a "run:".
 
 Il prompt della linea di comando cambia e siete nel server: provate a controllare con ifconfig, dovreste avere una interfaccia eth0: annotate l'ip.
 
@@ -40,11 +42,11 @@ Il prompt della linea di comando cambia e siete nel server: provate a controllar
         TX packets 0  bytes 0 (0.0 B)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-La vostra directory home è vuota. Una directory /shared è collegata alla directory "shared" nel vostro PC. I file che create in quella directory sono immediatamente visibli nel Docker, virtuale e viceversa.
+La vostra directory home è vuota. Una directory /shared è collegata alla directory "shared" nel vostro PC. I file che create in quella directory sono immediatamente visibli nel Docker e viceversa.
 
-All'avvio della macchina siete utenti `user` nella directory home. Potente invocare comandi con sudo: la password di `user`, che è `user`.
+All'avvio della macchina siete utenti `user` nella directory home dell'utente "user". Potete invocare comandi con sudo: vi si chiederà la password di `user`, che è `user`.
 
-Potete accedere alla macchina anche tramita ssh dalla macchina fisica, utilizzando il comando ssh, o una applicazione in grado di realizzare un collegamento in ssh.
+Potete accedere al Docker anche tramite ssh dalla macchina fisica, utilizzando il comando ssh, o una applicazione in grado di realizzare un collegamento in ssh. L'indirizzo è quello corrispondente alla porta "eth0" ottenuta con ifconfig.
 
 # Svolgimento dei laboratori
 

@@ -42,7 +42,7 @@ Il prompt della linea di comando cambia e siete nel server: provate a controllar
         TX packets 0  bytes 0 (0.0 B)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-La vostra directory home è vuota. Una directory /shared è collegata alla directory "shared" nel vostro PC. I file che create in quella directory sono immediatamente visibli nel Docker e viceversa.
+La vostra directory home è vuota. La home dell'utente "user" è collegata alla directory "userHome" nel vostro PC. I file che create in quella directory sono immediatamente visibili nel Docker e viceversa.
 
 All'avvio della macchina siete utenti `user` nella directory home dell'utente "user". Potete invocare comandi con sudo: vi si chiederà la password di `user`, che è `user`.
 
@@ -68,7 +68,7 @@ Come per forgiare pacchetti PING
 
 ## Produzione ed analisi di pacchetti UDP
 
-Avviare due server (make server) e connetterli come indicato con VirtualBox. pacchetti si catturano comunque con Wirehark, anche se la macchina ospite non è il destinatoraio finale, perché la cattura è "promiscua".
+Clonare il repository dell'esercizio nella directory userHome ed avviare due server (make server): il repository clonato sarà disponibile in ambedue le home degli utenti sui Docker. Invocare su un Docker il mittente, e sull'altro il destinatario. I pacchetti si catturano comunque con Wirehark sul sistema ospite, il vostro PC, perché la cattura è "promiscua".
 
 ## Analisi del protocollo DHCP
 
@@ -78,9 +78,20 @@ Non si riesce. Comunque dovrebbe essere possibile vedere i dhcp prodotti dal nod
 
 Utilizzando Wireshark: avviare Wireshark, impostare il filtro "dns", azzerare la visualizzazione, fare un ping su www.example.com, fermare subito la cattura. Attenzione perchè di solito c'è una cache, quindi bisogna fare un refresh.
 
-:"Compito - Laboratorio: Client/server TCP in Python
-Compito - Laboratorio: Trasferimento di un file con nc
-Compito - Laboratorio: Configurazione accesso SSH con chiave
-Compito - Laboratorio: configurazione server LAMP
-Compito - Laboratorio: installazione di un servizio Flask
+## Client/server TCP in Python
+
+Come per UDP avviare due Docker e clonare il codice nella directory condivisa: su un Docker avviare il client, e sull'altro il server, secondo le istruzioni dell'esercizio.
+
+## Trasferimento di un file con nc
+
+Come sopra. Attenzione a trasferire il file in una directory diversa, ad esempio su /tmp, nel Docker destinatario del trasferimento.
+
+## Configurazione accesso SSH con chiave
+
+Avviare due docker e configurare l'accesso dall'uno all'altro, come indicato nelle trasparenze. In alternativa è anche possibile configurare l'accesso per chiave dalla macchina ospite.
+
+## Configurazione server LAMP
+Usare https://hub.docker.com/r/mattrayner/lamp (da fare)
+
+## Installazione di un servizio Flask
 Compito - Laboratorio: creazione di una istanza su Heroku e installazione di un servizio"

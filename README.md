@@ -42,7 +42,7 @@ Il prompt della linea di comando cambia e siete nel server: provate a controllar
         TX packets 0  bytes 0 (0.0 B)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-La vostra directory home è vuota. La home dell'utente "user" è collegata alla directory "userHome" nel vostro PC. I file che create in quella directory sono immediatamente visibili nel Docker e viceversa.
+La vostra directory home è vuota. La home dell'utente "user" è collegata alla directory "userHome" nel vostro PC. Le modifiche ai file che create in quella directory sono immediatamente visibili nel Docker e viceversa.
 
 All'avvio della macchina siete utenti `user` nella directory home dell'utente "user". Potete invocare comandi con sudo: vi si chiederà la password di `user`, che è `user`.
 
@@ -91,7 +91,23 @@ Come sopra. Attenzione a trasferire il file in una directory diversa, ad esempio
 Avviare due docker e configurare l'accesso dall'uno all'altro, come indicato nelle trasparenze. In alternativa è anche possibile configurare l'accesso per chiave dalla macchina ospite.
 
 ## Configurazione server LAMP
-Usare https://hub.docker.com/r/mattrayner/lamp (da fare)
+
+Con "make lamp" avviate un docker che ospita un server composto da un web server (Apache), un database SQL (MySQL), e l'interprete PHP. Trivate la documentazione su https://hub.docker.com/r/mattrayner/lamp. Come per il docker "server" i dati di configurazione sono in una directory condivisa con l'host. La directory si chiama "web" e all'interno trovate la directory per la app ("app") e quella per il database ("mysql"). Nella directory "app" c'è il semplice file html per l'esercitazione. Ma lo strumento è completo e consente lo sviluppo di applicazioni web nello stile LAMP.
+
+Per svolgere l'esercizio è necessario prima ottenere l'indirizzo IP del docker. Per questo collegate al Docker un terminale, con il comando
+
+    $ sudo docker exec -it flask /bin/bash
+
+Poi con il comando 
+
+    $ cat /etc/hosts
+
+ottenete una lista di indirizzi IP: quello del docker è in una rete privata, probabilmente nella 172.16.0.0/12.
+
+Per raggiungere il server potete utilizzare questo indirizzo nel browser del vostro PC. Per modificare i contenuti potete editare i file nella directory "web/app" sul vostro PC. Per catturare il traffico potete utilizzare Wireshark sul vostro PC. Potete anche accedere al database MySQL con gli strumenti appropriati (Squirrel oppure riga di comando). La password dell'utente admin è mostrata durante i lprimo avvio: annotatela se volete utilizzare il database! In ogni momento potete cancellare la directory web/mysql, e il database verrà reinizializzato con una nuova password.
 
 ## Installazione di un servizio Flask
+
+
+
 Compito - Laboratorio: creazione di una istanza su Heroku e installazione di un servizio"

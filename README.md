@@ -17,9 +17,9 @@ Per creare il nodo server, operazione che si fa una singola volta, a meno che no
 
 se avete installato il tool "make". Installarlo non è difficile, ma se preferite farne a meno aprite il file "Makefile" copiate il comando "docker..." in corrispondenza a "build:" e mettetelo in riga di comando.
 
-Per avviare il server il comando è: 
+Per avviare un server il comando è
 
-`$ make server`
+`$ make server1`
 
 Come sopra, potete copiare il comando "docker..." dal makefile in corrispondenza a "run:".
 
@@ -47,6 +47,8 @@ La vostra directory home è vuota. La home dell'utente "user" è collegata alla 
 All'avvio della macchina siete utenti `user` nella directory home dell'utente "user". Potete invocare comandi con sudo: vi si chiederà la password di `user`, che è `user`.
 
 Potete accedere al Docker anche tramite ssh dalla macchina fisica, utilizzando il comando ssh, o una applicazione in grado di realizzare un collegamento in ssh. L'indirizzo è quello corrispondente alla porta "eth0" ottenuta con ifconfig.
+
+Oltre al Docker server1 avete anche a disposizione un secondo server, server2, e due Docker specializzati, rispettivamente lamp e flask.
 
 # Svolgimento dei laboratori
 
@@ -108,6 +110,6 @@ Per raggiungere il server potete utilizzare questo indirizzo nel browser del vos
 
 ## Installazione di un servizio Flask
 
-
+Con "make flask" avviate un docker che ospita un server che contiene al 
 
 Compito - Laboratorio: creazione di una istanza su Heroku e installazione di un servizio"

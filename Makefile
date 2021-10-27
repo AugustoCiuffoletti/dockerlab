@@ -15,4 +15,4 @@ push:
 lamp:
 	sudo docker run --name lamp -it --rm -p "80:80" -p 3306:3306 -v ${PWD}/web/app:/app -v ${PWD}/web/mysql:/var/lib/mysql mattrayner/lamp:latest
 flask:
-	sudo docker run --name flask -it --rm -p 80:80 -v ${PWD}/flask:/app -d jazzdd/alpine-flask
+	sudo docker run --name flask -it --rm -p 5000:5000 -v ${PWD}/flask:/app psrlab-flask:latest

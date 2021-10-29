@@ -4,6 +4,8 @@ test0:
 	sudo docker run --rm hello-world
 demo:
 	sudo docker run -it --rm ubuntu /bin/bash
+desktop:
+	sudo docker run --name desktop -it --rm -p 6080:80 -v /dev/shm:/dev/shm dorowu/ubuntu-desktop-lxde-vnc
 server1:
 	sudo docker run --name server1 -it --rm --volume ${PWD}/shared1/:/shared psrlab:latest
 server2:

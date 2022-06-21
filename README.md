@@ -1,10 +1,40 @@
 # dockerlab
 
-Per realizzare gli esercizi è necessario installare sulla propria macchina il codice seguente:
+Per realizzare gli esercizi è necessario installare sulla propria macchina
+ alcune applicazioni. Sono applicazioni disponibili per tutti i sistemi operativi, largamente utilizzate, ben documentate e facili da disinstallare. Sono elencate di seguito con alcune brevi note sull'installazione e l'uso.
 
-- docker (brew cask install docker)
-- git (brew install git)
-- make (brew install make)
+## Docker Desktop ([https://www.docker.com/get-started/](https://www.docker.com/get-started/))
+
+E' una applicazizone che ci consente di virtualizzare un host di rete per osservare il funzionamento dei protocolli di comunicazione.
+
+Al link indicato sopra trovate le istruzioni per l'installazione, diverse per i vari sistemi operativi: installate **Docker Desktop** (non Docker Hub). Al termine dell'installazione dovreste avere tra le aplicazioni Docker Desktop, caratterizzato da una icona che rappresenta una balena su fondo azzurro.
+
+Avviando l'applicazione apparirà una finestra e l'icona nella cosiddetta **task bar**, in alto o in basso sullo schermo, dipendemente dalla configurazione.
+
+Non dovrebbe essere necessario utilizzare l'interfaccia grafica, ma l'applicazione deve essere avviata per poter eseguire gli esercizi che richiedono i server virtualizzati. Quindi la finestra può essere subito chiusa, ma nella task-bar resterà presente l'icona. Per interrompere l'applicazione, nel menu collegato all'icona selezionate **Quit Docker Desktop**. Per accedere nuovamente alla dashboard selezionate **Dashboard**. Per svolgere le attività del corso **non** è necessario nessun tipo di sottoscrizione.
+
+Per le attività di laboratorio utilizzeremo le funzionalità di **Docker Desktop** da linea di comando, utilizzando un emulatore di terminale (*command prompt* per Windows)
+
+Al termine delle attività di laboratorio è opportuno interrompere l'applicazione, perchè impegna risorse del PC e può interferire con altre applicazioni.
+
+Saltuariamente, la dashboard potrà esservi utile per rimuovere **containers** e immagini di disco (**images**), usando il menu a sinistra.
+
+## Git ([https://git-scm.com/downloads](https://git-scm.com/downloads))
+
+Git disponibile per tutti i principali sistemi operativi. Le sempllici istruzioni di installazione sono indicate al link.
+
+E' un'applicazione a linea di comando (quindi si usa da emulatore di terminale) per gestire progetti software. E' uno strumento complesso ma prezioso nell'attività di sviluppo. Per l'attività di laboratorio lo utilizzeremo solo per semplificare l'operazione di download del materiale per le esercitazioni.
+
+Dopo averlo installato potete subito provarlo per scaricare in locale queste istruzioni (e il materiale collegato), con il comando:
+
+$ git clone https://github.com/AugustoCiuffoletti/dockerlab/
+
+**Attenzione**: il comando da eseguire **non** comprende il $ iniziale, che viene inserito solo per indicare che si tratta di un comando da terminale da un account utente.
+
+## make ([https://cmake.org/install/](https://git-scm.com/downloads))
+
+Make è una applicazione a linea di comando che semplifica l'esecuzione di procedure di compilazione e configurazione. Sui sistemi Linux e Mac è molto semplice l'installazione del comando Unix originale, **make**, utilizzando gli installer di sistema (*brew* e *apt* rispettivamente). In Windows è più pratico utilizzare lo strumento derivato **cmake**, con funzionamento analogo, anche disponibile per Linux e Mac.  
+
 - Wireshark (brew install wireshark)
 - Ostinato
 - geany
